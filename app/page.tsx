@@ -15,14 +15,14 @@ export default async function Home() {
     <>
       <section className={styles.top}>
         <div>
-          <h1 className={styles.title}>テクノロジーの力で{name}を変える</h1>
+          <h1 className={styles.title}>映画を語れる自分になる</h1>
           <p className={styles.description}>
-            私たちは市場をリードしているテックカンパニーです
+            映画史と業界の知識を体系的に学ぶハリウッド発・日本唯一の映画学習システム
           </p>
         </div>
         <Image
           className={styles.bgimg}
-          src="/img-mv.jpg"
+          src="/film-2205325_1280.jpg"
           alt=""
           width={4000}
           height={1200}
