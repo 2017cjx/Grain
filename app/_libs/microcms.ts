@@ -12,29 +12,48 @@ export type Member = {
   image: MicroCMSImage;
 } & MicroCMSListContent;
 
-export type Category = {
+// 記事、ニュース共通のカテゴリ、コンテンツ型
+
+export type CategoryLike = {
   name: string;
 } & MicroCMSListContent;
 
-export type News = {
+export type ContentBase = {
   title: string;
   description: string;
   content: string;
   thumbnail?: MicroCMSImage;
-  category: Category;
+  category: CategoryLike;
 } & MicroCMSListContent;
 
-export type ArticleCategory = {
-  name: string;
-} & MicroCMSListContent;
+export type NewsCategory = CategoryLike;
+export type ArticleCategory = CategoryLike;
+export type News = ContentBase;
+export type Article = ContentBase;
 
-export type Article = {
-  title: string;
-  description: string;
-  content: string;
-  thumbnail?: MicroCMSImage;
-  category: Category;
-} & MicroCMSListContent;
+// export type Category = {
+//   name: string;
+// } & MicroCMSListContent;
+
+// export type News = {
+//   title: string;
+//   description: string;
+//   content: string;
+//   thumbnail?: MicroCMSImage;
+//   category: Category;
+// } & MicroCMSListContent;
+
+// export type ArticleCategory = {
+//   name: string;
+// } & MicroCMSListContent;
+
+// export type Article = {
+//   title: string;
+//   description: string;
+//   content: string;
+//   thumbnail?: MicroCMSImage;
+//   category: Category;
+// } & MicroCMSListContent;
 
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
   throw new Error("MICROCMS_SERVICE_DOMAIN is required");
@@ -88,7 +107,7 @@ export const getCategoryDetail = async (
   contentId: string,
   queries?: MicroCMSQueries
 ) => {
-  const detailData = await client.getListDetail<Category>({
+  const detailData = await client.getListDetail<CategoryLike>({
     endpoint: "categories",
     contentId,
     queries,
@@ -104,7 +123,7 @@ export const getAllNewsList = async () => {
 };
 
 export const getAllCategoryList = async () => {
-  const listData = await client.getAllContents<Category>({
+  const listData = await client.getAllContents<CategoryLike>({
     endpoint: "categories",
   });
   return listData;
@@ -141,7 +160,7 @@ export const getArticleCategoryDetail = async (
   contentId: string,
   queries?: MicroCMSQueries
 ) => {
-  const detailData = await client.getListDetail<Category>({
+  const detailData = await client.getListDetail<CategoryLike>({
     endpoint: "article_categories",
     contentId,
     queries,

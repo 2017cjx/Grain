@@ -3,6 +3,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import Header from "./_components/Header";
 import Footer from "./_components/Footer";
+import Providers from "./providers";
 
 export const metadata: Metadata = {
   metadataBase: new URL("http://localhost:3000"),
@@ -31,9 +32,11 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body>
-        <Header />
-        {children}
-        <Footer />
+        <Providers>
+          <Header />
+          {children}
+          <Footer />
+        </Providers>
       </body>
       <GoogleAnalytics gaId="G-HN4KE7BWDG" />
     </html>

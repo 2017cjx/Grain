@@ -39,7 +39,7 @@ export default async function Page({ params, searchParams }: Props) {
   }).catch(notFound);
   return (
     <>
-      <Article data={data} />
+      <Article data={data} categoryBasePath="/news/category" />
       <div className={styles.footer}>
         <ButtonLink href="/news">ニュース一覧へ</ButtonLink>
       </div>
