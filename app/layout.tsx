@@ -8,16 +8,16 @@ import Providers from "./providers";
 export const metadata: Metadata = {
   metadataBase: new URL("http://localhost:3000"),
   title: {
-    template: "%s | シンプルなコーポレートサイト",
-    default: "シンプルなコーポレートサイト",
+    template: "%s | Grain 映画学習システム",
+    default: "Grain",
   },
   description:
-    "「Next.js+ヘッドレスCMSではじめる！かんたん・モダンWebサイト制作入門」で作成されるサイトです。",
+    "映画史と業界の知識を体系的に学ぶハリウッド発・日本唯一の映画学習システム",
   openGraph: {
-    title: "シンプルなコーポレートサイト",
+    title: "Grain 映画学習システム",
     description:
-      "「Next.js+ヘッドレスCMSではじめる！かんたん・モダンWebサイト制作入門」で作成されるサイトです。",
-    images: ["/ogp.png"],
+      "映画史と業界の知識を体系的に学ぶハリウッド発・日本唯一の映画学習システム",
+    images: ["/Grain ogp.png"],
   },
   alternates: {
     canonical: "http://localhost:3000",
